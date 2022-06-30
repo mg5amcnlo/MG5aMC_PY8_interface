@@ -1,0 +1,25 @@
+
+! Specify statistics parameters.
+Main:numberOfEvents         = 1000  ! number of events generated
+! Tell Pythia that LHEF input is used
+Beams:frameType             = 4
+
+! Be more forgiving with momentum mismatches.
+Check:epTolErr               = 2e-2
+
+! Specify jet matching parameters for MLM (not necessary!)
+JetMatching:merge            = on
+JetMatching:scheme           = 1
+JetMatching:setMad           = on
+JetMatching:qCut             = 50.0
+JetMatching:coneRadius       = 1.0
+JetMatching:etaJetMax        = 50.0
+JetMatching:nJetMax          = 1
+
+# Do veto externally (e.g. in SysCalc)
+JetMatching:doVeto           = off
+
+! Subruns for merging
+LHEFInputs:nSubruns       = 1 
+Main:subrun               = 0
+Beams:LHEF                = test.lhe.gz
