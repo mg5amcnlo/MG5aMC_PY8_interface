@@ -697,24 +697,24 @@ int main( int argc, char* argv[] ){
 
       // Here attach three syscalc numbers to end of weights.
       // smin, smax, scomp
-      if (doMatch && !doInternalMLMvetoes) {
+      //if (doMatch && !doInternalMLMvetoes) {
         // In HepMC, "weights" is a map, which means that it will internally
         // always be ordered as below (because of the string key comparison
         // operator). Thus, we have to either live with this ordering, or
         // encode smin, smax, scomp cleverly...
-        ostringstream convert;
-        convert << scientific << setprecision(10) << syscalc->scomp();
-        string tag = "scomp=" + convert.str();
-        hepmcevt->weights().push_back(syscalc->scomp(), tag);
-        convert.str("");
-        convert << scientific << setprecision(10) << syscalc->smax();
-        tag = "smax=" + convert.str();
-        hepmcevt->weights().push_back(syscalc->smax(), tag);
-        convert.str("");
-        convert << scientific << setprecision(10) << syscalc->smin();
-        tag = "smin=" + convert.str();
-        hepmcevt->weights().push_back(syscalc->smin(), tag);
-      }
+        //ostringstream convert;
+        //convert << scientific << setprecision(10) << syscalc->scomp();
+        //string tag = "scomp=" + convert.str();
+        //hepmcevt->weights().push_back(syscalc->scomp(), tag);
+        //convert.str("");
+        //convert << scientific << setprecision(10) << syscalc->smax();
+        //tag = "smax=" + convert.str();
+        //hepmcevt->weights().push_back(syscalc->smax(), tag);
+        //convert.str("");
+        //convert << scientific << setprecision(10) << syscalc->smin();
+        //tag = "smin=" + convert.str();
+        //hepmcevt->weights().push_back(syscalc->smin(), tag);
+      //}
 
       // Fill HepMC event
       ToHepMC.fill_next_event( pythia, hepmcevt );
